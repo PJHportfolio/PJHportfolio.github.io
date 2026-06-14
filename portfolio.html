@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jin Hyeong Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/pavicon1.png">
+</head>
+
+<body>
+  <!-- 사이드바 -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <h1>
+        <div class="name">JIN HYEONG</div>
+        <div class="title">PORTFOLIO</div>
+      </h1>
+    </div>
+
+    <nav class="sidebar-nav">
+      <ul>
+        <li>
+          <button onclick="navigateTo('index.html')">HOME</button>
+        </li>
+        <li>
+          <button class="active" onclick="navigateTo('portfolio.html')">PORTFOLIO</button>
+        </li>
+        <li>
+          <button onclick="navigateTo('about.html')">ABOUT</button>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="sidebar-footer">
+      <p>Let's connect</p>
+      <a href="mailto:wls8094@naver.com">wls8094@naver.com</a>
+      <a href="tel:01026668094">010-2666-8094</a>
+    </div>
+  </aside>
+
+  <!-- 메인 콘텐츠 -->
+  <main class="main-content">
+    <div class="container" style="padding-top: 4rem; padding-bottom: 4rem;">
+      <!-- 페이지 제목 -->
+      <div class="page-title fade-in">
+        <h1>포트폴리오</h1>
+        <div class="underline"></div>
+      </div>
+
+      <!-- 숏폼 섹션 -->
+      <div class="portfolio-section">
+        <h2 class="portfolio-section-title">숏폼</h2>
+        <div class="portfolio-grid portfolio-grid-shortform">
+          <!-- 프로젝트 1 (숏폼) -->
+          <div class="portfolio-item" onclick="openModal(1)">
+            <div class="portfolio-thumbnail" style="aspect-ratio: 9/16;">
+              <img src="img/고양이와 스프/02.png" alt="프로젝트 1">
+              <div class="portfolio-overlay">
+                <h4>모션그래픽</h4>
+                <span>보기</span>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <p class="portfolio-category">Motion Graphic</p>
+              <h3 class="portfolio-title">고양이 애니메이션</h3>
+            </div>
+          </div>
+
+          <!-- 프로젝트 4 (숏폼) -->
+          <div class="portfolio-item" onclick="openModal(4)">
+            <div class="portfolio-thumbnail" style="aspect-ratio: 9/16;">
+              <img src="img/에너지/01.png" alt="프로젝트 4">
+              <div class="portfolio-overlay">
+                <h4>모션그래픽</h4>
+                <span>보기</span>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <p class="portfolio-category">Motion Graphic</p>
+              <h3 class="portfolio-title">에너지 절약</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 롱폼 섹션 -->
+      <div class="portfolio-section">
+        <h2 class="portfolio-section-title">롱폼</h2>
+        <div class="portfolio-grid portfolio-grid-longform">
+          <!-- 프로젝트 2 (롱폼) -->
+          <div class="portfolio-item" onclick="openModal(2)">
+            <div class="portfolio-thumbnail">
+              <img src="img/수면 인포그래픽/06.png" alt="프로젝트 2">
+              <div class="portfolio-overlay">
+                <h4>수면 인포그래픽</h4>
+                <span>보기</span>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <p class="portfolio-category">Infographic</p>
+              <h3 class="portfolio-title">수면의 골든타임</h3>
+            </div>
+          </div>
+
+          <!-- 프로젝트 3 (롱폼) -->
+          <div class="portfolio-item" onclick="openModal(3)">
+            <div class="portfolio-thumbnail">
+              <img src="img/who am i/06.png" alt="프로젝트 3">
+              <div class="portfolio-overlay">
+                <h4>타이포그래피</h4>
+                <span>보기</span>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <p class="portfolio-category">Typography</p>
+              <h3 class="portfolio-title">자기소개 (Who Am I?)</h3>
+            </div>
+          </div>
+
+          <!-- 프로젝트 5 (롱폼) -->
+          <div class="portfolio-item" onclick="openModal(5)">
+            <div class="portfolio-thumbnail">
+              <img src="img/나이키/03.png" alt="프로젝트 5">
+              <div class="portfolio-overlay">
+                <h4>슬라이드쇼</h4>
+                <span>보기</span>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <p class="portfolio-category">Slide Show</p>
+              <h3 class="portfolio-title">NIKE 광고</h3>
+            </div>
+          </div>
+
+          <!-- 프로젝트 6 (롱폼) -->
+          <div class="portfolio-item" onclick="openModal(6)">
+            <div class="portfolio-thumbnail">
+              <img src="img/디퓨져/01.png" alt="프로젝트 6">
+              <div class="portfolio-overlay">
+                <h4>제품 광고</h4>
+                <span>보기</span>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <p class="portfolio-category">Product Ad</p>
+              <h3 class="portfolio-title">디퓨저 광고</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- 모달 -->
+  <div id="modal" class="modal" onclick="closeModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal()">×</button>
+
+      <!-- 모달 내용 (JavaScript로 동적 생성) -->
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script>
+    // 포트폴리오 데이터
+    const portfolioData = {
+      1: {
+        category: '모션그래픽',
+        title: '고양이 애니메이션',
+        youtubeUrl: '<iframe src="https://www.youtube.com/embed/WRUDnOrKYOk?controls=1&modestbranding=1&rel=0&fs=0" title="고양이와 스프 애니메이션" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
+        videoRatio: '9:16',
+        duration: '2일',
+        tools: 'After Effects, Illustrator',
+        method: '개인 프로젝트',
+        concept: `따뜻한 봄날의 컨셉을 담은 '힐링'과 '반가움' 느낌으로 제작했습니다.
+캐릭터의 움직임과 벚꽃의 입자감에 시각적 포인트를 집중했습니다.`,
+        process: [
+          {
+            step: '01. 기획',
+            description: `'고양이와 스프' 게임속의 고양이 캐릭터와 <br>봄, 벚꽃 컨셉에 맞는 시나리오를 구성했습니다. 
+            <br><br>1. 벚꽃이 흩날리는 피크닉 분위기 배경<br>
+                          2. 고양이의 깜짝 등장<br>
+                          3. 밝은 미소와 인사로 마무리` },
+          {
+            step: '02. 제작', description: `배경의 나무와 들판, 고양이 캐릭터, 그리고 흩날리는 개별 벚꽃잎들을 
+          <br>애니메이팅하기 최적화된 상태로 레이어를 세분화하여 작업했습니다.
+          <br><br>고양이캐릭터의 탄성있는 생동감을 표현했습니다.` },
+          { step: '03. 완성', description: `밝고 활기찬 배경음악을 사용하고 <br>벚꽃잎이 날리는 연출로 피크닉,소풍 분위기를 조성했습니다.` }
+        ],
+        images: [
+          'img/고양이와 스프/01.png',
+          'img/고양이와 스프/02.png',
+          'img/고양이와 스프/03.png',
+          'img/고양이와 스프/04.png',
+          'img/고양이와 스프/05.png'
+        ]
+      },
+      2: {
+        category: '인포그래픽',
+        title: '수면의 골든타임',
+        youtubeUrl: `<iframe  src="https://www.youtube.com/embed/iagFvMRWJkU" title="수면의 골든타임 (인포그래픽)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+        videoRatio: '16:9',
+        duration: '4일',
+        tools: 'After Effects, Illustrator',
+        method: '개인 프로젝트',
+        concept: `밤과 수면을 상징하는 차분한 다크 블루 톤을 메인으로 사용하고, 핵심 정보에는 대비가 강한 컬러를 사용하여 몰입할수있도록 제작했습니다.
+<br>딱딱한 정보성 영상이 아닌 <strong>편안한 캠페인 영상의</strong> 느낌을 전달하고자 했습니다.`,
+        process: [
+          { step: '01. 기획', description: `'수면의 양'보다 '수면의 질과 타이밍'이 중요하다는 의학적 정보를 <br>시청자들이 쉽게 이해할 수 있도록 캠페인 형식의 인포그래픽으로 시각화하고자 했습니다.` },
+          { step: '02. 제작', description: `일반적인 도표나 곡선 그래프를 배제하고, 상황을 직관적으로 보여줄 수 있는 캐릭터와 오브젝트를 Illustrator로 직접 제작했습니다. <br>After Effects에서 나레이션과 자막의 흐름에 맞춰 애니메이션을 제작했습니다.` },
+          { step: '03. 완성', description: '차분한 배경음악을 사용하여 수면이라는 주제에 맞는 편안한 분위기를 조성하고, 나레이션과 자막의 내용이 모션과 서로 일치하도록 작업을 진행했습니다.' }
+        ],
+        images: [
+          'img/수면 인포그래픽/01.png',
+          'img/수면 인포그래픽/02.png',
+          'img/수면 인포그래픽/03.png',
+          'img/수면 인포그래픽/04.png',
+          'img/수면 인포그래픽/05.png',
+          'img/수면 인포그래픽/06.png',
+          
+        ]
+      },
+      3: {
+        category: '타이포그래피',
+        title: '자기소개 (Who Am I?)',
+        youtubeUrl: '<iframe src="https://www.youtube.com/embed/PcbvvYeceSc" title="자기소개 타이포그래픽" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
+        videoRatio: '16:9',
+        duration: '3일',
+        tools: 'After Effects',
+        method: '개인 프로젝트',
+        concept: `화려한 배경보다는 텍스트와 아이콘의 움직임 자체에 집중할 수 있도록 무채색 배경을 사용하였고,<br>
+그린 계열의 포인트 컬러를 통해 시선이 머물러야 할 핵심 키워드를 강조했습니다.`,
+        process: [
+          {
+            step: '01. 기획', description: `
+          복잡한 수식어보다 <strong>나 자신의 본질을</strong> 가장 솔직하고 명확하게 전달하기 위해 이번 자기소개 영상을 기획했습니다. <br>
+          많은 양의 정보 전달의 효율성을 높이기 위해 빠른 템포의 타이포그래피 모션을 선택했습니다.` },
+          {
+            step: '02. 제작', description: `타이포그래피로 빠른 모션 속에서도 메시지를 명확히 읽을수 있도록 <br>가독성을 최우선으로 
+          장황한 설명 보다는 최대한 짧은 단어와 간결한 문장으로 텍스트를 구성하여 전달력에 힘을 주었습니다.` },
+          {
+            step: '03. 완성', description: `배경음악의 비트와 효과음에 맞춘 편집을 진행했습니다. 
+          <br>제가 영상작업을 할때 드는 느낀점들을 다양한 연출을 통해 영상 디자이너로서의 포부을 담아 완성했습니다.` }
+        ],
+        images: [
+          'img/who am i/01.png',
+          'img/who am i/02.png',
+          'img/who am i/03.png',
+          'img/who am i/04.png',
+          'img/who am i/05.png',
+          'img/who am i/06.png',
+
+        ]
+      },
+      4: {
+        category: '모션그래픽',
+        title: '에너지 절약',
+        youtubeUrl: '<iframe src="https://www.youtube.com/embed/_xtJKrU15GE" title="박진형 - 애니메이션" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
+        videoRatio: '9:16',
+        duration: '4일',
+        tools: 'After Effects, Illustrator',
+        method: '개인 프로젝트',
+        concept: `환경 보호의 긍정적인 이미지를 전달하기 위해 라임색과 차분한 네이비 컬러를 사용하여 친환경적인 분위기 조성했고,<br>
+메시지의 가독성을 높이기 위해 직관적인 텍스트 배치를 활용하였으며, 텍스트의 내용에 맞는 애니메이션을 연출했습니다.`,
+        process: [
+          {
+            step: '01. 기획', description: `'에너지 전환'이라는 다소 무겁고 어렵게 느껴질 수 있는 환경 주제를 대중들에게 친근하게 전달하고 
+          <br> 일상 속 작은 실천이 세상을 바꾸는 큰 힘이 될 수 있음을 시각적으로 표현했습니다.` },
+          {
+            step: '02. 제작', description: `주인공 캐릭터와 실내/외 배경 오브젝트(충전기, 엘리베이터, 카페 등)를 Illustrator로 제작했습니다.
+          <br> After Effects를 활용하여 캐릭터의 움직임과 사물의 반응(창문 열기, 텀블러 담기 등)에 최대한 자연스럽고 부드러운 모션을 넣었습니다.` },
+          { step: '03. 완성', description: `따뜻한 느낌의 배경음악과 나레이션을 합성하여 메시지가 잘 전달될수 있도록 완성했습니다.` }
+        ],
+        images: [
+          'img/에너지/01.png',
+          'img/에너지/02.png',
+          'img/에너지/03.png',
+          'img/에너지/04.png',
+          'img/에너지/05.png',
+          'img/에너지/06.png',
+
+        ]
+      },
+      5: {
+        category: '슬라이드쇼',
+        title: 'NIKE 광고',
+        youtubeUrl: '<iframe src="https://www.youtube.com/embed/QcVoWrx0sjg" title="박진형  나만의 슬라이드쇼" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
+        videoRatio: '16:9',
+        duration: '3일',
+        tools: 'After Effects',
+        method: '개인 프로젝트',
+        concept: `짧은 컷들을 배치하여 지루함 없는 속도감의 슬라이드쇼로 제작하고 영상의 초반부에 나이키 로고, 후반부에 'JUST DO IT'를 배치하여<br>영상으로 보여준 역동적인 움직임들이 하나의 브랜드 가치로 연결되도록 연출했습니다.`,
+        process: [
+          {
+            step: '01. 기획', description: `글로벌 스포츠 브랜드 'NIKE'의 강렬하고 도전적인 이미지를 시각화하기 위해, 빠른 템포의 배경음악으로 시청각적 타격감을 극대화할 수 있는 슬라이드쇼를 기획했습니다. 
+          <br>'NIKE'라는 브랜드의 이미지를 떠올리며 '활동성'과 '역동적'이라는 키워드로 영상 소스를 수집했습니다.` },
+          { step: '02. 제작', description: `배경음악의 박자에 맞춰 장면 컷을 전환하고 영상 소스와 같이 도형 오브젝트와 키워드 텍스트들을 사용하여 시각적 타격감을 극대화 했습니다.` },
+          { step: '03. 완성', description: `빠른 슬라이드쇼 특성상 자칫 놓칠 수 있는 부분을 방지하기 위해 텍스트로 몰입도를 높이고, 영상의 기승전결을 점검하며 최종적으로 나이키 로고와 'JUST DO IT' 슬로건을 배치하여 브랜드 광고로서의 완성도를 높였습니다.` }
+        ],
+        images: [
+          'img/나이키/01.png',
+          'img/나이키/02.png',
+          'img/나이키/03.png',
+          'img/나이키/04.png',
+          'img/나이키/05.png',
+          'img/나이키/06.png'
+
+        ]
+      },
+      6: {
+        category: '제품 광고',
+        title: '디퓨저 광고',
+        youtubeUrl: '<iframe src="https://www.youtube.com/embed/dtEFhlRuxeo" title="박진형 나만의 제품 광고 영상" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
+        videoRatio: '16:9',
+        duration: '3일',
+        tools: 'After Effects',
+        method: '개인 프로젝트',
+        concept: `베이지와 화이트 톤의 웜톤 컬러를 메인으로 선정하여 시각적인 안정감과 포근함을 부여했습니다. 
+        <br>직접 촬영한 영상을 자연스럽게 배치하고 그 사이에 트랙 매트 기법을 적용하여 '디퓨저'제품의 '향기'를 한층 깊이 있게 표현하고자 했습니다.`,
+        process: [
+          {
+            step: '01. 기획', description: `'디퓨저'라는 상품을 떠올렸을때 느끼는 '향기로운 일상'과 '포근한 휴식'을 시각화하기 위해, 밝고 따뜻한 톤앤매너를 가진 감성 광고 영상을 제작하고자 했습니다. 
+          <br>시청자가 영상을 보는 것만으로도 공간의 향기가 느껴질 수 있도록 '산뜻한 느낌'과 '부드러운 전환'에 초점을 맞췄습니다. 
+          <br>복합적인 마스크와 매트 기법을 활용한 정교한 연출을 기획했습니다.` },
+          {
+            step: '02. 제작', description: `직접 촬영한 원본 소스의 질감을 최대한 살리면서도, 영상 전체에 포근한 무드가 감돌도록 따뜻한 웜톤 색보정을 진행했습니다. 
+          <br>특히 향기의 속성을 시각화하기 위해 '그림자', '새벽', '은은함'과 같은 키워드를 트랙 매트를 활용하여, 감각적인 연출을 시도했습니다` },
+          {
+            step: '03. 완성', description: `영상의 분위기를 해치지 않는 범위 내에서 텍스트를 배치했습니다. 
+          <br>직접 촬영한 각 장면의 전환과 매트 기법을 활용한 전환 효과가 배경음악과 자연스럽게 어우러지도록 최종 편집을 조율하여 완성도를 높였습니다.` }
+        ],
+        images: [
+          'img/디퓨져/01.png',
+          'img/디퓨져/02.png',
+          'img/디퓨져/03.png',
+          'img/디퓨져/04.png',
+          'img/디퓨져/05.png',
+          'img/디퓨져/06.png',
+          
+        ]
+      }
+    };
+
+    function openModal(id) {
+      const data = portfolioData[id];
+      const paddingBottom = data.videoRatio === '9:16' ? '177.78%' : '56.25%';
+
+      let html = `
+        <p class="modal-category">Category : ${data.category}</p>
+        <h2 class="modal-title">${data.title}</h2>
+
+        <div class="modal-video" data-ratio="${data.videoRatio}">
+          ${data.youtubeUrl}
+        </div>
+
+        <div class="modal-section">
+          <h3>프로젝트 개요</h3>
+          <div class="modal-overview">
+            <div class="modal-overview-item">
+              <p>작업기간</p>
+              <p>${data.duration}</p>
+            </div>
+            <div class="modal-overview-item">
+              <p>사용 툴</p>
+              <p>${data.tools}</p>
+            </div>
+            <div class="modal-overview-item">
+              <p>제작 방식</p>
+              <p>${data.method}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-section">
+          <h3>디자인 컨셉</h3>
+          <p class="modal-concept">${data.concept}</p>
+        </div>
+
+        <div class="modal-section">
+          <h3 style="color: #111111; font-weight: 700;">작업 프로세스</h3>
+          <div class="modal-process">
+            ${data.process.map(proc => `
+              <div class="modal-process-item" style="margin-bottom: 2rem; border-bottom: 1px solid #f0f0f0; padding-bottom: 1.5rem;">
+                <p class="modal-process-step" style="font-weight: bold; color: #0f766e; margin-bottom: 0.4rem; font-size: 1.05rem;">${proc.step}</p>
+                
+                ${proc.title ? `<p class="modal-process-title" style="font-weight: 700; color: #111111; margin-bottom: 0.5rem; font-size: 1.1rem;">${proc.title}</p>` : ''}
+                
+                <p class="modal-process-description" style="color: #2c3e50; line-height: 1.6; font-size: 0.95rem; font-weight: 400; margin-top: 0;">${proc.description}</p>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        <div class="modal-section">
+          <h3>프리뷰</h3>
+          <div class="modal-preview">
+            ${data.images.map(img => `<img src="${img}" alt="프리뷰">`).join('')}
+          </div>
+        </div>
+      `;
+
+      document.getElementById('modal-body').innerHTML = html;
+      document.getElementById('modal').classList.add('active');
+    }
+
+    function closeModal(event) {
+      if (event && event.target.id !== 'modal') return;
+      document.getElementById('modal').classList.remove('active');
+    }
+
+    function navigateTo(page) {
+      window.location.href = page;
+    }
+  </script>
+</body>
+
+</html>

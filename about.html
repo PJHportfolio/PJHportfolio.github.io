@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jin Hyeong Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/pavicon1.png">
+</head>
+
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <h1>
+        <div class="name">JIN HYEONG</div>
+        <div class="title">PORTFOLIO</div>
+      </h1>
+    </div>
+
+    <nav class="sidebar-nav">
+      <ul>
+        <li>
+          <button onclick="navigateTo('index.html')">HOME</button>
+        </li>
+        <li>
+          <button onclick="navigateTo('portfolio.html')">PORTFOLIO</button>
+        </li>
+        <li>
+          <button class="active" onclick="navigateTo('about.html')">ABOUT</button>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="sidebar-footer">
+      <p>Let's connect</p>
+      <a href="mailto:wls8094@naver.com">wls8094@naver.com</a>
+      <a href="tel:01026668094">010-2666-8094</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <div class="about-container">
+      <div class="about-rows-layout fade-in">
+
+        <div class="about-row row-1-profile">
+          <div class="about-profile-photo">
+            <img src="img/2.jpeg" alt="증명사진">
+          </div>
+
+          <div class="about-section info-section">
+            <h3 class="about-section-title">인적사항</h3>
+            <div class="about-section-content info-grid">
+              <div class="about-item">
+                <span class="about-item-label">이름</span>
+                <span class="about-item-value">박진형</span>
+              </div>
+              <div class="about-item">
+                <span class="about-item-label">전화</span>
+                <span class="about-item-value">010-2666-8094</span>
+              </div>
+              <div class="about-item">
+                <span class="about-item-label">이메일</span>
+                <span class="about-index-mail"><a href="mailto:wls8094@naver.com">wls8094@naver.com</a></span>
+              </div>
+              <div class="about-item">
+                <span class="about-item-label">위치</span>
+                <span class="about-item-value">부산 연제구</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-row row-2-intro">
+          <div class="about-section">
+            <h3 class="about-section-title">소개글</h3>
+            <div class="about-intro-p">
+              <h4>"이야기의 몰입감은 사소한 디테일에서 시작됩니다."</h4>
+              <br>
+              <p>
+               청각적 리듬과 시각적 요소가 자연스럽게 어우러지는 컷 전환에 가장 집중하며 제작합니다.
+               <br> 배경음악과 효과음의 타이밍, 장면 구성 등 사소한 디테일도 놓치지 않으며
+               <br>시청자의 기억에 오래 남을 수 있는 밀도 높은 영상을 만들어 나가겠습니다.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-row row-3-details">
+          <div class="about-section education-section">
+            <h3 class="about-section-title">학력 및 교육</h3>
+            <div class="about-section-content">
+
+              <div class="about-item">
+                <span class="about-item-label">2025.03.18 - 2025.07.25</span>
+                <span class="about-item-value">센텀직업전문학교</span>
+                <span class="about-item-sublabel">실버케어 디지털 인력양성을 위한 ICT융합과정 (AI,3D)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-section skills-section">
+            <h3 class="about-section-title">스킬 & 자격증</h3>
+            <div class="about-section-content">
+              <div class="about-item">
+                <span class="about-item-label">사용 도구</span>
+                <div class="about-skills">
+                  <span class="about-skill-tag">Adobe Premiere Pro</span>
+                  <span class="about-skill-tag">Adobe After Effects</span>
+                  <span class="about-skill-tag">Adobe Illustrator</span>
+                  <span class="about-skill-tag">Adobe Photoshop</span>
+                  <span class="about-skill-tag">html</span>
+                  <span class="about-skill-tag">css</span>
+                  <span class="about-skill-tag">AI(Chat GPT, Gemini, Grok3 ...)</span>
+                </div>
+              </div>
+              <div class="about-item">
+                <span class="about-item-label">자격증</span>
+                <div class="about-certifications">
+                  <span>• 멀티미디어 콘텐츠 제작 전문가</span>
+                  <span>• 컴퓨터 그래픽스 운용기능사(필기)</span>
+                  <span>• 운전면허 1종 보통</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function navigateTo(page) {
+      window.location.href = page;
+    }
+  </script>
+</body>
+
+</html>

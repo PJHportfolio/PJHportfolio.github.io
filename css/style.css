@@ -1,0 +1,1057 @@
+/* ============================================
+   포트폴리오 사이트 - 전체 CSS 스타일
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 폰트 임포트 */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
+
+body {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: #f5f5f5;
+  color: #454545;
+  line-height: 1.6;
+}
+
+/* ============================================
+   공통 스타일
+   ============================================ */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* ============================================
+   레이아웃 - 사이드바 + 메인 콘텐츠
+   ============================================ */
+
+body {
+  display: flex;
+}
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 256px;
+  height: 100vh;
+  background-color: #f5f5f5;
+  border-right: 1px solid #e5e5e5;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.5rem;
+  overflow-y: auto;
+}
+
+.main-content {
+  margin-left: 256px;
+  min-height: 100vh;
+  width: calc(100% - 256px);
+}
+
+/* ============================================
+   사이드바 스타일
+   ============================================ */
+
+.sidebar-logo {
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+
+.sidebar-logo h1 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.sidebar-logo .name {
+  color: #333333;
+  margin-bottom: 0.25rem;
+}
+
+.sidebar-logo .title {
+  color: #454545;
+}
+
+/* 네비게이션 메뉴 */
+.sidebar-nav {
+  flex: 1;
+  margin-bottom: 2rem;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sidebar-nav button {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #454545;
+  transition: color 0.2s ease;
+  text-align: left;
+}
+
+.sidebar-nav button:hover {
+  color: #0d9488;
+}
+
+.sidebar-nav button.active {
+  color: #0d9488;
+}
+
+/* 사이드바 하단 정보 */
+.sidebar-footer {
+  border-top: 1px solid #e5e5e5;
+  padding-top: 2rem;
+}
+
+.sidebar-footer p {
+  font-size: 0.75rem;
+  color: #767676;
+  margin-bottom: 1rem;
+}
+
+.sidebar-footer a {
+  display: block;
+  font-size: 0.875rem;
+  color: #454545;
+  margin-bottom: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.sidebar-footer a:hover {
+  color: #0d9488;
+}
+
+/* ============================================
+   페이지 공통 스타일
+   ============================================ */
+
+.page-title {
+  margin-bottom: 3rem;
+}
+
+.page-title h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.page-title .underline {
+  height: 1px;
+  background-color: #d9d9d9;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+/* 애니메이션 */
+
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.slide-in-up {
+  animation: slideInUp 0.6s ease-out;
+  opacity: 1;
+}
+
+/* ============================================
+   홈 페이지 (index.html)
+   ============================================ */
+
+.home-hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+
+}
+
+
+.home-hero-content {
+  max-width: 56rem;
+  text-align: center;
+}
+
+.home-hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  .home-hero-title {
+    font-size: 4.5rem;
+  }
+}
+
+.home-hero-title .accent {
+  color: #0d9488;
+}
+
+.home-hero-divider {
+  width: 128px;
+  height: 1px;
+  background-color: #d9d9d9;
+  margin: 2rem auto;
+}
+
+.home-hero-description {
+  font-size: 1.25rem;
+  color: #767676;
+  margin-bottom: 2rem;
+  line-height: 1.8;
+  max-width: 48rem;
+  /* 박스 너비를 넉넉하게 넓혀서 데스크탑에서 두 줄로 이쁘게 배치되도록 합니다 */
+  margin-left: auto;
+  margin-right: auto;
+  word-break: keep-all;
+  /* 데스크탑에서도 단어가 중간에 쪼개지지 않고 깔끔하게 떨어지게 만듭니다 */
+}
+
+@media (min-width: 768px) {
+  .home-hero-description {
+    font-size: 1.5rem;
+  }
+}
+
+.home-hero-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  animation: slideInUp 0.6s ease-out 0.2s both;
+}
+
+@media (min-width: 640px) {
+  .home-hero-buttons {
+    flex-direction: row;
+  }
+}
+
+.btn {
+  padding: 0.75rem 2rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border: 2px solid;
+  border-radius: 0.25rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-primary {
+  border-color: #454545;
+  color: #454545;
+}
+
+.btn-primary:hover {
+  background-color: #454545;
+  color: #f5f5f5;
+}
+
+.btn-secondary {
+  border-color: #454545;
+  color: #454545;
+}
+
+.btn-secondary:hover {
+  background-color: #454545;
+  color: #f5f5f5;
+}
+
+/* ============================================
+   포트폴리오 페이지 (portfolio.html)
+   ============================================ */
+
+.portfolio-section {
+  margin-bottom: 4rem;
+}
+
+.portfolio-section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #454545;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #0d9488;
+  display: inline-block;
+}
+
+.portfolio-grid {
+  display: grid;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.portfolio-grid-shortform {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* 숏폼 썸네일 크기 축소 */
+.portfolio-grid-shortform .portfolio-thumbnail {
+  aspect-ratio: 9 / 16;
+  height: 500px;
+}
+
+.portfolio-grid-shortform .portfolio-overlay h4 {
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+.portfolio-grid-shortform .portfolio-overlay span {
+  font-size: 0.75rem;
+}
+
+.portfolio-grid-longform {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* 롱폼 썸네일 크기 조정 */
+.portfolio-grid-longform .portfolio-thumbnail {
+  aspect-ratio: 16 / 9;
+  height: 230px;
+}
+
+.portfolio-grid-longform .portfolio-overlay h4 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-grid-longform .portfolio-overlay span {
+  font-size: 0.8rem;
+}
+
+.portfolio-item {
+  cursor: pointer;
+  animation: slideInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.portfolio-item:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.portfolio-item:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.portfolio-item:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.portfolio-item:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.portfolio-item:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+.portfolio-item:nth-child(6) {
+  animation-delay: 0.5s;
+}
+
+.portfolio-thumbnail {
+  position: relative;
+  overflow: hidden;
+  background-color: #f0f0f0;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+  aspect-ratio: 4 / 3;
+}
+
+.portfolio-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.portfolio-thumbnail:hover img {
+  transform: scale(1.1);
+}
+
+.portfolio-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.portfolio-thumbnail:hover .portfolio-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.portfolio-overlay h4 {
+  color: #ffffff;
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  text-align: center;
+  padding: 0 1rem;
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  transition-delay: 75ms;
+}
+
+.portfolio-overlay span {
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 500;
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  transition-delay: 150ms;
+}
+
+.portfolio-thumbnail:hover .portfolio-overlay h4,
+.portfolio-thumbnail:hover .portfolio-overlay span {
+  opacity: 1;
+}
+
+.portfolio-info {
+  padding: 0;
+}
+
+.portfolio-category {
+  font-size: 0.875rem;
+  color: #767676;
+  margin-bottom: 0.25rem;
+}
+
+.portfolio-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #454545;
+}
+
+/* 모달 스타일 */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 50;
+  overflow-y: auto;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-content {
+  background-color: #fafafa;
+  border-radius: 0.25rem;
+  width: 100%;
+  max-width: 1500px;
+  max-height: 85vh;
+  padding: 2.5rem;
+  position: relative;
+  margin: auto;
+  overflow-y: auto;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  color: #454545;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close:hover {
+  color: #0d9488;
+}
+
+.modal-category {
+  font-size: 0.875rem;
+  color: #767676;
+  margin-bottom: 0.5rem;
+}
+
+.modal-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+/* 모달 영상 - 반응형 크기 조정 */
+.modal-video {
+  position: relative;
+  overflow: hidden;
+  background-color: #000000 !important;
+  /* 영상 로딩 전 배경만 블랙 처리 */
+  z-index: 1 !important;
+}
+
+/* 롱폼 (16:9) */
+.modal-video[data-ratio="16:9"] {
+  width: 100%;
+  max-width: 80%;
+  /* 고정 height를 지우고, 가로세로 비율에 맞춰 브라우저가 자동 계산하도록 합니다 */
+  height: auto;
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+}
+
+/* 숏폼 (9:16) */
+.modal-video[data-ratio="9:16"] {
+  max-width: 350px;
+  height: 623px;
+  margin-left: auto;
+  margin-right: auto;
+  aspect-ratio: 9 / 16;
+}
+
+/* 포트폴리오 리스트의 썸네일 오버레이 서식이 모달 안으로 침범하는 것을 완벽 차단 */
+.modal-content .portfolio-thumbnail::after,
+.modal-content .modal-video::after,
+.modal-content .modal-video::before,
+.modal-content .portfolio-overlay {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+  /* 스크린샷에 나온 상단 검은색 그라디언트 잔상을 완전히 삭제 */
+  background-image: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  box-shadow: none !important;
+}
+
+.modal-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none !important;
+  z-index: 9999 !important;
+  /* 무조건 최상단으로 올림 */
+  background: transparent !important;
+}
+
+.modal-section {
+  margin-bottom: 2rem;
+}
+
+.modal-section h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #454545;
+}
+
+.modal-overview {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.modal-overview-item {
+  padding: 1rem;
+  background-color: #f5f5f5;
+  border-radius: 0.25rem;
+}
+
+.modal-overview-item p:first-child {
+  font-size: 0.875rem;
+  color: #767676;
+  margin-bottom: 0.5rem;
+}
+
+.modal-overview-item p:last-child {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #454545;
+}
+
+.modal-concept {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #454545;
+}
+
+.modal-process {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.modal-process-item {
+  padding: 1rem;
+  background-color: #f5f5f5;
+  border-radius: 0.25rem;
+}
+
+.modal-process-step {
+  font-size: 0.875rem;
+  color: #0d9488;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.modal-process-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #454545;
+  margin-bottom: 0.5rem;
+}
+
+.modal-process-description {
+  font-size: 0.875rem;
+  color: #767676;
+  line-height: 1.6;
+}
+
+.modal-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.modal-preview img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.25rem;
+  object-fit: cover;
+}
+
+/* ============================================
+   어바웃 페이지 (about.html) - 요청 3단 가로 배정
+   ============================================ */
+
+.about-container {
+  padding: 4rem 3rem;
+  /* 위아래, 좌우 여백을 조금 더 넓혀 안정감 부여 */
+  max-width: 1200px;
+  /* 기존 1000px에서 포트폴리오 그리드와 맞춰 1200px로 확장 */
+  margin: 0 auto;
+  /* 콘텐츠 전체를 메인 영역 중앙으로 정렬 */
+  width: 100%;
+}
+
+/* 세로로 3개의 행(Row)을 쌓고 간격을 주는 설정 */
+.about-rows-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  /* 줄 사이의 여백을 시원하게 벌림 */
+  width: 100%;
+}
+
+.about-row {
+  width: 100%;
+}
+
+/* 타이틀 기본 공통 서식: 흰색 배경 완전히 제거 및 #0d9488 부여 */
+.about-section-title {
+  font-size: 1.125rem;
+  color: #0d9488;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.about-section-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* --------------------------------------------
+   [1번째 줄] 사진 + 인적사항 가로 배열
+   -------------------------------------------- */
+.row-1-profile {
+  display: flex;
+  gap: 4rem;
+  /* 사진과 인적사항 사이 간격 */
+  align-items: center;
+}
+
+.about-profile-photo {
+  width: 180px;
+  height: 234px;
+  /* 3:4 비율 균형 명함판 크기 조절 */
+  background-color: #eeeeee;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.about-profile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.info-section {
+  flex: 1;
+}
+
+/* 인적사항을 깔끔하게 좌우 2열로 정렬 */
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem 3rem;
+}
+
+/* --------------------------------------------
+   [2번째 줄] 자기소개 독립 블록
+   -------------------------------------------- */
+.row-2-intro {
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 3rem 0;
+  /* 위아래 구분선과 텍스트 사이 여백 */
+}
+
+.about-intro-p p {
+  line-height: 1.5;
+  font-size: 1rem;
+  color: #454545;
+  word-break: keep-all;
+}
+
+/* --------------------------------------------
+   [3번째 줄] 학력/교육 + 스킬/자격증 가로 배열
+   -------------------------------------------- */
+.row-3-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* 좌우 50%씩 반반 분할 */
+  gap: 5rem;
+}
+
+/* --------------------------------------------
+   기타 세부 컴포넌트 서식 (기존 폰트감 유지)
+   -------------------------------------------- */
+.about-item {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #eaeaea;
+  /* 항목마다 은은한 구분선을 주어 꽉 찬 느낌 유도 */
+}
+
+.about-item-label {
+  font-size: 0.8rem;
+  color: #767676;
+  margin-bottom: 0.4rem;
+}
+
+.about-item-value,
+.about-index-mail a {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #333333;
+}
+
+.about-item-sublabel {
+  font-size: 0.8rem;
+  color: #767676;
+  margin-top: 0.3rem;
+}
+
+.about-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.about-skill-tag {
+  padding: 0.4rem 0.75rem;
+  background-color: #e5e5e5;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #454545;
+}
+
+.about-certifications {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: #454545;
+  line-height: 1.7;
+}
+
+/* ============================================
+   📱 모바일 및 태블릿 완벽 대응 반응형 서식 (최종)
+   ============================================ */
+@media (max-width: 768px) {
+
+  /* 1. 기본 레이아웃 가로 정렬을 세로 정렬로 변경 및 가로스크롤 방지 */
+  body {
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+
+  /* 2. 사이드바 전체를 상단 영역으로 최적화 */
+  .sidebar {
+    position: relative;
+    width: 100% !important;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 0 0 1rem 0 !important;
+    /* 내부 패딩을 0으로 만들어 구분감 레이아웃 최적화 */
+    box-sizing: border-box;
+    background-color: #f5f5f5;
+    /* 기본 배경은 전체 톤에 맞춤 */
+  }
+
+  /* [수정사항 1] 로고 영역에 독립적인 흰색 배경과 여백 부여하여 어색함 해결 */
+  .sidebar-logo {
+    background-color: #ffffff;
+    /* 배경을 완전 흰색으로 지정 */
+    border-bottom: 1px solid #eaeaea;
+    padding: 1.2rem 1rem !important;
+    /* 로고 상하좌우 안쪽 여백 */
+    margin-bottom: 1rem !important;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+    /* 부드러운 경계 쉐도우 추가 */
+  }
+
+  .sidebar-logo h1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.25rem !important;
+  }
+
+  .sidebar-logo .name {
+    margin-bottom: 0 !important;
+  }
+
+  /* 네비게이션 메뉴 탭 마진 및 간격 확보 */
+  .sidebar-nav {
+    margin-bottom: 0;
+    padding: 0 1rem;
+  }
+
+  .sidebar-nav ul {
+    flex-direction: row;
+    justify-content: center;
+    gap: 2.2rem;
+    /* 메뉴 탭 간의 간격을 살짝 넓혀 터치하기 편하게 변경 */
+  }
+
+  /* 모바일 푸터 숨김 */
+  .sidebar-footer {
+    display: none;
+  }
+
+  /* 3. 메인 콘텐츠 및 컨테이너 폭 100% 최적화 */
+  .main-content {
+    margin-left: 0 !important;
+    width: 100% !important;
+    max-width: 100vw;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
+  .container {
+    padding: 0 1.2rem;
+    /* 좌우 여백을 살짝 조절하여 모바일 가독성 상향 */
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* 홈 탭 화면 텍스트 모바일 최적화 */
+  .home-hero-title {
+    font-size: 2.1rem !important;
+    line-height: 1.5;
+    white-space: nowrap;
+  }
+
+  .home-hero-description {
+    font-size: 0.95rem !important;
+    line-height: 1.7;
+    max-width: 100%;
+    padding: 0 0.2rem;
+    word-break: keep-all;
+  }
+
+  .home-hero-divider {
+    margin: 1.5rem auto;
+  }
+
+  /* [수정사항 2] 롱폼 영상 우측 잘림 방지 및 그리드 1열 완전 강제화 */
+  .portfolio-grid-shortform,
+  .portfolio-grid-longform,
+  .portfolio-grid {
+    grid-template-columns: 1fr !important;
+    /* 무조건 1열로만 나열되도록 고정 */
+    width: 100% !important;
+    gap: 2rem;
+    /* 영상 간의 세로 간격을 주어 가독성 확보 */
+    box-sizing: border-box;
+  }
+
+  /* 숏폼 썸네일 비율 유지 */
+  .portfolio-grid-shortform .portfolio-thumbnail {
+    height: auto;
+    aspect-ratio: 9 / 16;
+    width: 100%;
+  }
+
+  /* 롱폼 썸네일 우측 잘림 차단 및 정확한 16:9 모바일 비율 구현 */
+  .portfolio-grid-longform .portfolio-thumbnail {
+    height: auto !important;
+    /* 고정 높이(230px)를 해제하여 우측이 짤리지 않게 합니다 */
+    aspect-ratio: 16 / 9;
+    width: 100% !important;
+  }
+
+  /* 5. ABOUT 페이지 모바일 최적화 */
+  .about-container {
+    padding: 2rem 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .row-1-profile {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .profile-image {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .row-3-details {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .about-skill-tag {
+    word-break: break-all;
+  }
+
+  /* 6. 모달 창 모바일 최적화 */
+  .modal-content {
+    width: 95% !important;
+    max-height: 85vh;
+    padding: 1.5rem 1rem;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .modal-overview {
+    grid-template-columns: 1fr !important;
+    gap: 0.8rem;
+  }
+
+  .modal-process {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem;
+  }
+
+  .modal-video[data-ratio="16:9"] {
+    max-width: 100% !important;
+  }
+}
+
+/* PC 전용 및 공통 유틸리티 서식 유지 */
+.pc-only {
+  display: inline;
+}
+
+.home-hero-description {
+  max-width: 52rem !important;
+  word-break: keep-all;
+}
+
+@media (max-width: 768px) {
+  .pc-only {
+    display: none !important;
+  }
+
+  .home-hero-description {
+    max-width: 100% !important;
+    white-space: normal;
+    word-break: keep-all;
+  }
+}

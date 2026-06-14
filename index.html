@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jin Hyeong Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/pavicon1.png">
+</head>
+
+<body>
+  <!-- 사이드바 -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <h1>
+        <div class="name">JIN HYEONG</div>
+        <div class="title">PORTFOLIO</div>
+      </h1>
+    </div>
+
+    <nav class="sidebar-nav">
+      <ul>
+        <li>
+          <button class="active" onclick="navigateTo('index.html')">HOME</button>
+        </li>
+        <li>
+          <button onclick="navigateTo('portfolio.html')">PORTFOLIO</button>
+        </li>
+        <li>
+          <button onclick="navigateTo('about.html')">ABOUT</button>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="sidebar-footer">
+      <p>Let's connect</p>
+      <a href="mailto:wls8094@naver.com">wls8094@naver.com</a>
+      <a href="tel:01026668094">010-2666-8094</a>
+    </div>
+  </aside>
+
+  <!-- 메인 콘텐츠 -->
+  <main class="main-content">
+    <!-- 히어로 섹션 -->
+    <div class="home-hero">
+
+      <div class="home-hero-content fade-in">
+        <div class="home-hero-title">
+          디테일은 더하고
+          <br>
+          <span class="accent">몰입감은 높이고</span>
+        </div>
+
+        <div class="home-hero-divider"></div>
+
+        <p class="home-hero-description">
+          사소하더라도 작은 디테일이 모여서 이야기의 몰입감을 만든다고 믿습니다.
+          <br class="pc-only">
+          시각적인 요소와 사운드의 조화로운 연출로 기억에 남을 영상을 만들어 나가겠습니다.
+        </p>
+
+        <div class="home-hero-buttons">
+          <button class="btn btn-primary" onclick="navigateTo('portfolio.html')">포트폴리오 →</button>
+          <button class="btn btn-secondary" onclick="navigateTo('about.html')">소개 →</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function navigateTo(page) {
+      window.location.href = page;
+    }
+
+    // 현재 페이지 네비게이션 활성화
+    document.addEventListener('DOMContentLoaded', function () {
+      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+      const navButtons = document.querySelectorAll('.sidebar-nav button');
+
+      navButtons.forEach(button => {
+        button.classList.remove('active');
+      });
+
+      if (currentPage === 'index.html' || currentPage === '') {
+        navButtons[0].classList.add('active');
+      } else if (currentPage === 'portfolio.html') {
+        navButtons[1].classList.add('active');
+      } else if (currentPage === 'about.html') {
+        navButtons[2].classList.add('active');
+      }
+    });
+  </script>
+</body>
+
+</html>
