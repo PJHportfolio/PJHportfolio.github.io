@@ -86,9 +86,28 @@
       </div>
 
       <!-- 롱폼 섹션 -->
+
       <div class="portfolio-section">
         <h2 class="portfolio-section-title">롱폼</h2>
         <div class="portfolio-grid portfolio-grid-longform">
+
+          <!-- 프로젝트 1 (롱폼) -->
+          <div class="portfolio-item" onclick="openModal(8)">
+            <div class="portfolio-thumbnail">
+              <img src="img/멀콘 자격증/00.png" alt="프로젝트 8">
+              <div class="portfolio-overlay">
+                <h4>인포그래픽</h4>
+                <span>보기</span>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <p class="portfolio-category">Infographic</p>
+              <h3 class="portfolio-title">자격증 후기</h3>
+            </div>
+          </div>
+
+
+
           <!-- 프로젝트 2 (롱폼) -->
           <div class="portfolio-item" onclick="openModal(2)">
             <div class="portfolio-thumbnail">
@@ -234,7 +253,7 @@
           'img/수면 인포그래픽/04.png',
           'img/수면 인포그래픽/05.png',
           'img/수면 인포그래픽/06.png',
-          
+
         ]
       },
       3: {
@@ -353,7 +372,7 @@
           'img/디퓨져/04.png',
           'img/디퓨져/05.png',
           'img/디퓨져/06.png',
-          
+
         ]
       },
       7: {
@@ -387,11 +406,52 @@
           'img/AI 광고제작/5.png',
           'img/AI 광고제작/6.png',
 
-          
-          
+
+
+        ]
+      },
+      
+
+      8: {
+        category: '자격증 후기',
+        title: '멀티미디어콘텐츠제작전문가 필기·실기 합격 후기',
+        youtubeUrl: '<iframe src="https://www.youtube.com/embed/dVJ2rQFuDUg" title="멀티미디어콘텐츠제작전문가 필기 실기 합격후기" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
+        videoRatio: '16:9',
+        duration: '2일',
+        tools: 'After Effects',
+        method: '개인 프로젝트',
+        concept: `멀티미디어콘텐츠제작전문가 자격증 취득 경험을 바탕으로,
+    필기와 실기 준비 과정 및 응시 후기를 전달하는 영상입니다.
+<br>자격증을 준비하는 시청자가 필요한 정보를 쉽게 파악할 수 있도록
+내용을 정리하고, 주요 내용을 자막으로 강조하는 데 중점을 두었습니다`,
+        process: [
+          {
+            step: '01. 기획', description: `자격증 준비 과정에서 얻은 경험과 전달할 정보를 정리했습니다.
+    <br>필기와 실기 후기를 중심으로 내용을 구분하고,
+    시청자가 흐름을 따라가기 쉽도록 영상의 순서와 대본을 구성했습니다.` },
+          {
+            step: '02. 제작', description: `대본의 흐름에 맞춰 화면과 자막을 구성했습니다.
+    <br>핵심 정보가 눈에 잘 들어오도록 글자의 크기와 배치를 조정하고,
+    내용에 맞는 화면 전환과 움직임을 적용했습니다.` },
+          {
+            step: '03. 완성', description: `영상의 흐름에 맞춰 장면 길이와 자막 노출 시간을 조정했습니다.
+    <br>정보가 정확하게 전달되는지 확인하고,
+    전체적인 가독성과 편집 호흡을 점검해 완성했습니다.` }
+        ],
+        images: [
+          'img/멀콘 자격증/00.png',
+          'img/멀콘 자격증/01.png',
+          'img/멀콘 자격증/02.png',
+          'img/멀콘 자격증/03.png',
+          'img/멀콘 자격증/04.png',
+          'img/멀콘 자격증/05.png',
+
+
+
+
+
         ]
       }
-      
     };
 
     function openModal(id) {
